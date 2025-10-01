@@ -1,7 +1,13 @@
-# Gray-Leaf-Project
-## **TODO: This is a project to create a new program language with compiler, linker and debuger.**
+﻿# **Gray-Leaf-Project** [![GitHub license](https://img.shields.io/badge/license-GPLv3.0-blue.svg)](/LICENSE) [![Language](https://img.shields.io/badge/language-C++-green.svg)](https://isocpp.org/)
 
-**Because I am a middle school student, I have very little time, so the process will be slow.**
+# Engilsh | [Chinese](/README-Chinese.md)
 
-## [Licence](LICENSE)
+* ## __Description__: This is a project to create a new program language with compiler, linker and debuger.
+* ## __Core purpose__: In order to study compiler principles and improve my programming skills, I refer to major mainstream C/C++ compilers to create a compiler for my own language.
+* ## __TODO__: *☆ In these three month, I will finish the [grammar](/Grammar/first.md).*
+
+# **☆☆☆ Because I am a middle school student, I have very little time, so the process will be slow.**
+
+## [Licence](/LICENSE)
 The project is under GPL-3.0.
+## ☆☆☆ NOTICE: This project is for learning purposes only and is prohibited from commercial use.
