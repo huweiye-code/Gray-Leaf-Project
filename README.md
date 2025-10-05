@@ -4,10 +4,10 @@
 
 * ## __Description__: This is a project to create a new program language with compiler, linker and debuger.
 * ## __Core purpose__: In order to study compiler principles and improve my programming skills, I refer to major mainstream C/C++ compilers to create a compiler for my own language.
-* ## __TODO__: *☆ In these three month, I will finish the [grammar](/Grammar/first.md).*
+* ## __TODO__: *☆ In these three month, I will finish the [grammar](/Grammar/first.md). And finish the basic lexical analysis.*
 
 # **☆☆☆ Because I am a middle school student, I have very little time, so the process will be slow.**
 
-## [Licence](/LICENSE)
-The project is under GPL-3.0.
+## [License](/LICENSE)
+The project is GPL-3.0 licensed.
 ## ☆☆☆ NOTICE: This project is for learning purposes only and is prohibited from commercial use.

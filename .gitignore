@@ -1,0 +1,7 @@
+*.obj
+*.o
+*.lib
+*.dll
+*.exe
+Tools/Config/*.h
+
