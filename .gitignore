@@ -3,5 +3,12 @@
 *.lib
 *.dll
 *.exe
+*.json
 Tools/Config/*.h
+
+[Bb]uild/
+[Oo]ut/
+
+.vs/
+
 
