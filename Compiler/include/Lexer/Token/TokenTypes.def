@@ -1,0 +1,319 @@
+/****************************************************************************************
+*	Gray-Leaf Project																	*
+*	Copyright (c) 2025 <huweiye-code>													*
+*																						*
+*	This file is part of Gray-Leaf Project.												*
+*																						*
+*	Gray-Leaf Project is free software: you can redistribute it and/or modify			*
+*	it under the terms of the GNU General Public License as published by				*
+*	the Free Software Foundation, either version 3 of the License, or					*
+*	(at your option) any later version.													*
+*																						*
+*	The Gray-Leaf Project is distributed in the hope that it will be useful,			*
+*	but WITHOUT ANY WARRANTY; without even the implied warranty of						*
+*	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the						*
+*	GNU General Public License for more details.										*
+*																						*
+*	You should have received a copy of the GNU General Public License					*
+*	along with The Gray-Leaf Project. If not, see <http://www.gnu.org/licenses/>.		*
+*																						*
+* ====-----------------------TokenTypes.def-----------------Language:C++------------====*
+* /// file:																				*
+*	  Defines the TokenType's basic keywords.											*
+* 																						*
+*****************************************************************************************/
+
+#ifndef TOKEN
+#define TOKEN(X)
+#endif
+#ifndef PUNCTUATOR
+#define PUNCTUATOR(X,Y) TOKEN(pu_ ## X)
+#endif
+#ifndef KEYWORD
+#define KEYWORD(X,VER) TOKEN(kw_ ## X)
+#endif
+#ifndef TYPE_TRAIT
+#define TYPE_TRAIT(N,I,K,VER) KEYWORD(type_trait_ ## I,VER)
+#endif
+#ifndef ANNOTATION
+#define ANNOTATION(X) TOKEN(annot_ ## X)
+#endif
+
+// Language keywords.
+TOKEN(unknown)             // Not a token.
+TOKEN(eof)                 // End of file.
+TOKEN(code_completion)     // Code completion.
+TOKEN(comment)             // Comment.
+TOKEN(identifier)          // abcde123.
+TOKEN(raw_identifier)      // The raw identifier.
+TOKEN(numeric_constant)    // 0x123, 123, 01010.
+TOKEN(char_constant)       // 'a'.
+TOKEN(string_literal)      // "str".
+TOKEN(package_name)        // foo lexed as a package-name.
+
+
+PUNCTUATOR(l_square, "[")
+PUNCTUATOR(r_square, "]")
+PUNCTUATOR(l_paren, "(")
+PUNCTUATOR(r_paren, ")")
+PUNCTUATOR(l_brace, "{")
+PUNCTUATOR(r_brace, "}")
+PUNCTUATOR(period, ".")
+PUNCTUATOR(ellipsis, "...")
+PUNCTUATOR(amp, "&")
+PUNCTUATOR(ampequal, "&=")
+PUNCTUATOR(star, "*")
+PUNCTUATOR(starequal, "*=")
+PUNCTUATOR(plus, "+")
+PUNCTUATOR(plusplus, "++")
+PUNCTUATOR(plusequal, "+=")
+PUNCTUATOR(minus, "-")
+PUNCTUATOR(arrow, "->")
+PUNCTUATOR(minusminus, "--")
+PUNCTUATOR(minusequal, "-=")
+PUNCTUATOR(tilde, "~")
+PUNCTUATOR(exclaim, "!")
+PUNCTUATOR(exclaimequal, "!=")
+PUNCTUATOR(slash, "/")
+PUNCTUATOR(slashequal, "/=")
+PUNCTUATOR(percent, "%")
+PUNCTUATOR(percentequal, "%=")
+PUNCTUATOR(less, "<")
+PUNCTUATOR(lessless, "<<")
+PUNCTUATOR(lessequal, "<=")
+PUNCTUATOR(lesslessequal, "<<=")
+PUNCTUATOR(greater, ">")
+PUNCTUATOR(greatergreater, ">>")
+PUNCTUATOR(greaterequal, ">=")
+PUNCTUATOR(greatergreaterequal, ">>=")
+PUNCTUATOR(caret, "^")
+PUNCTUATOR(caretequal, "^=")
+PUNCTUATOR(pipe, "|")
+PUNCTUATOR(pipeequal, "|=")
+PUNCTUATOR(question, "?")
+PUNCTUATOR(colon, ":")
+PUNCTUATOR(semi, ";")
+PUNCTUATOR(equal, "=")
+PUNCTUATOR(equalequal, "==")
+PUNCTUATOR(comma, ",")
+PUNCTUATOR(periodstar, ".*")
+PUNCTUATOR(arrowstar, "->*")
+PUNCTUATOR(coloncolon, "::")
+PUNCTUATOR(and, "and")
+PUNCTUATOR(or, "or")
+
+
+KEYWORD(auto, 0)
+KEYWORD(break, 0)
+KEYWORD(case, 0)
+KEYWORD(char, 0)
+KEYWORD(const, 0)
+KEYWORD(continue, 0)
+KEYWORD(default, 0)
+KEYWORD(do, 0)
+KEYWORD(double, 0)
+KEYWORD(else, 0)
+KEYWORD(enum, 0)
+KEYWORD(extern, 0)
+KEYWORD(float, 0)
+KEYWORD(for, 0)
+KEYWORD(if, 0)
+KEYWORD(int, 0)
+KEYWORD(return, 0)
+KEYWORD(static, 0)
+KEYWORD(struct, 0)
+KEYWORD(switch, 0)
+KEYWORD(typedef, 0)
+KEYWORD(union, 0)
+KEYWORD(unsigned, 0)
+KEYWORD(void, 0)
+KEYWORD(volatile, 0)
+KEYWORD(while, 0)
+KEYWORD(bool, 0)
+KEYWORD(catch, 0)
+KEYWORD(class, 0)
+KEYWORD(const_cast, 0)
+KEYWORD(delete, 0)
+KEYWORD(explicit, 0)
+KEYWORD(false, 0)
+KEYWORD(friend, 0)
+KEYWORD(mutable, 0)
+KEYWORD(namespace, 0)
+KEYWORD(new, 0)
+KEYWORD(operator, 0)
+KEYWORD(private, 0)
+KEYWORD(protected, 0)
+KEYWORD(public, 0)
+KEYWORD(reinterpret_cast, 0)
+KEYWORD(static_cast, 0)
+KEYWORD(template, 0)
+KEYWORD(this, 0)
+KEYWORD(throw, 0)
+KEYWORD(true, 0)
+KEYWORD(try, 0)
+KEYWORD(typename, 0)
+KEYWORD(using, 0)
+KEYWORD(virtual, 0)
+KEYWORD(inline, 0 )
+
+KEYWORD(alignas, 0)
+KEYWORD(alignof, 0)
+KEYWORD(constexpr, 0)
+KEYWORD(decltype, 0)
+KEYWORD(noexcept, 0)
+KEYWORD(nullptr, 0)
+KEYWORD(static_assert, 0)
+KEYWORD(thread_local, 0)
+
+KEYWORD(co_await, 0)
+KEYWORD(co_aysnc, 0)
+KEYWORD(co_return, 0)
+KEYWORD(co_yield, 0)
+
+KEYWORD(package, 0)
+KEYWORD(import, 0)
+KEYWORD(export, 0)
+
+KEYWORD(concept, 0)
+KEYWORD(requires, 0)
+
+KEYWORD(attribute, 0)
+KEYWORD(get_file, 0)
+KEYWORD(get_function, 0)
+KEYWORD(get_function_type, 0)
+KEYWORD(get_line, 0)
+KEYWORD(get_source_location, 0)
+
+KEYWORD(declspec, 0)
+KEYWORD(interface, 0)
+
+TYPE_TRAIT(1, is_interface_class, IsInterfaceClass, 0)
+TYPE_TRAIT(1, is_sealed, IsSealed, 0)
+TYPE_TRAIT(1, is_destructible, IsDestructible, 0)
+TYPE_TRAIT(1, is_trivially_destructible, IsTriviallyDestructible, 0)
+TYPE_TRAIT(1, is_nothrow_destructible, IsNothrowDestructible, 0)
+TYPE_TRAIT(2, is_nothrow_assignable, IsNothrowAssignable, 0)
+TYPE_TRAIT(0, is_constructible, IsConstructible, 0)
+TYPE_TRAIT(0, is_nothrow_constructible, IsNothrowConstructible, 0)
+TYPE_TRAIT(2, is_assignable, IsAssignable, 0)
+TYPE_TRAIT(1, has_nothrow_move_assign, HasNothrowMoveAssign, 0)
+TYPE_TRAIT(1, has_trivial_move_assign, HasTrivialMoveAssign, 0)
+TYPE_TRAIT(1, has_trivial_move_constructor, HasTrivialMoveConstructor, 0)
+TYPE_TRAIT(1, is_implicit_lifetime, IsImplicitLifetime, 0)
+TYPE_TRAIT(2, is_virtual_base_of, IsVirtualBaseOf, 0)
+TYPE_TRAIT(1, has_nothrow_assign, HasNothrowAssign, 0)
+TYPE_TRAIT(1, has_nothrow_copy, HasNothrowCopy, 0)
+TYPE_TRAIT(1, has_nothrow_constructor, HasNothrowConstructor, 0)
+TYPE_TRAIT(1, has_trivial_assign, HasTrivialAssign, 0)
+TYPE_TRAIT(1, has_trivial_copy, HasTrivialCopy, 0)
+TYPE_TRAIT(1, has_trivial_constructor, HasTrivialDefaultConstructor, 0)
+TYPE_TRAIT(1, has_trivial_destructor, HasTrivialDestructor, 0)
+TYPE_TRAIT(1, has_virtual_destructor, HasVirtualDestructor, 0)
+TYPE_TRAIT(1, is_abstract, IsAbstract, 0)
+TYPE_TRAIT(1, is_aggregate, IsAggregate, 0)
+TYPE_TRAIT(2, is_base_of, IsBaseOf, 0)
+TYPE_TRAIT(1, is_class, IsClass, 0)
+TYPE_TRAIT(2, is_convertible_to, IsConvertibleTo, 0)
+TYPE_TRAIT(1, is_empty, IsEmpty, 0)
+TYPE_TRAIT(1, is_enum, IsEnum, 0)
+TYPE_TRAIT(1, is_final, IsFinal, 0)
+TYPE_TRAIT(1, is_literal_type, IsLiteralType, 0)
+TYPE_TRAIT(1, is_pod, IsPOD, 0)
+TYPE_TRAIT(1, is_polymorphic, IsPolymorphic, 0)
+TYPE_TRAIT(1, is_standard_layout, IsStandardLayout, 0)
+TYPE_TRAIT(1, is_trivial, IsTrivial, 0)
+TYPE_TRAIT(2, is_trivially_assignable, IsTriviallyAssignable, 0)
+TYPE_TRAIT(0, is_trivially_constructible, IsTriviallyConstructible, 0)
+TYPE_TRAIT(1, is_trivially_copyable, IsTriviallyCopyable, 0)
+TYPE_TRAIT(1, is_union, IsUnion, 0)
+TYPE_TRAIT(1, has_unique_object_representations, HasUniqueObjectRepresentations, 0)
+TYPE_TRAIT(2, is_layout_compatible, IsLayoutCompatible, 0)
+TYPE_TRAIT(2, is_pointer_interconvertible_base_of, IsPointerInterconvertibleBaseOf, 0)
+TYPE_TRAIT(1, is_trivially_equality_comparable, IsTriviallyEqualityComparable, 0)
+TYPE_TRAIT(1, is_bounded_array, IsBoundedArray, 0)
+TYPE_TRAIT(1, is_unbounded_array, IsUnboundedArray, 0)
+TYPE_TRAIT(1, is_scoped_enum, IsScopedEnum, 0)
+TYPE_TRAIT(1, can_pass_in_regs, CanPassInRegs, 0)
+TYPE_TRAIT(2, reference_binds_to_temporary, ReferenceBindsToTemporary, 0)
+TYPE_TRAIT(2, reference_constructs_from_temporary, ReferenceConstructsFromTemporary, 0)
+TYPE_TRAIT(2, reference_converts_from_temporary, ReferenceConvertsFromTemporary, 0)
+// IsDeducible is only used internally for CTAD implementation and is not exposed to users.
+TYPE_TRAIT(2, /*is_deducible*/, IsDeducible, 0)
+TYPE_TRAIT(1, is_cpp_trivially_relocatable, IsCppTriviallyRelocatable, 0)
+TYPE_TRAIT(1, is_trivially_relocatable, IsTriviallyRelocatable, 0)
+TYPE_TRAIT(1, is_bitwise_cloneable, IsBitwiseCloneable, 0)
+TYPE_TRAIT(1, is_replaceable, IsReplaceable, 0)
+TYPE_TRAIT(1, structured_binding_size, StructuredBindingSize, 0)
+TYPE_TRAIT(1, is_arithmetic, IsArithmetic, 0)
+TYPE_TRAIT(1, is_floating_point, IsFloatingPoint, 0)
+TYPE_TRAIT(1, is_integral, IsIntegral, 0)
+TYPE_TRAIT(1, is_complete_type, IsCompleteType, 0)
+TYPE_TRAIT(1, is_void, IsVoid, 0)
+TYPE_TRAIT(1, is_array, IsArray, 0)
+TYPE_TRAIT(1, is_function, IsFunction, 0)
+TYPE_TRAIT(1, is_reference, IsReference, 0)
+TYPE_TRAIT(1, is_lvalue_reference, IsLvalueReference, 0)
+TYPE_TRAIT(1, is_rvalue_reference, IsRvalueReference, 0)
+TYPE_TRAIT(1, is_fundamental, IsFundamental, 0)
+TYPE_TRAIT(1, is_object, IsObject, 0)
+TYPE_TRAIT(1, is_scalar, IsScalar, 0)
+TYPE_TRAIT(1, is_compound, IsCompound, 0)
+TYPE_TRAIT(1, is_pointer, IsPointer, 0)
+TYPE_TRAIT(1, is_member_object_pointer, IsMemberObjectPointer, 0)
+TYPE_TRAIT(1, is_member_function_pointer, IsMemberFunctionPointer, 0)
+TYPE_TRAIT(1, is_member_pointer, IsMemberPointer, 0)
+TYPE_TRAIT(1, is_const, IsConst, 0)
+TYPE_TRAIT(1, is_volatile, IsVolatile, 0)
+TYPE_TRAIT(1, is_signed, IsSigned, 0)
+TYPE_TRAIT(1, is_unsigned, IsUnsigned, 0)
+TYPE_TRAIT(2, is_same, IsSame, 0)
+TYPE_TRAIT(2, is_convertible, IsConvertible, 0)
+TYPE_TRAIT(2, is_nothrow_convertible, IsNothrowConvertible, 0)
+TYPE_TRAIT(0, array_rank, ArrayRank, 0)
+TYPE_TRAIT(0, array_extent, ArrayExtent, 0)
+
+TYPE_TRAIT(1, add_lvalue_reference, AddLvalueReference, 0)
+TYPE_TRAIT(1, add_pointer, AddPointer, 0)
+TYPE_TRAIT(1, add_rvalue_reference, AddRvalueReference, 0)
+TYPE_TRAIT(1, decay, Decay, 0)
+TYPE_TRAIT(1, remove_all_extents, RemoveAllExtents, 0)
+TYPE_TRAIT(1, remove_const, RemoveConst, 0)
+TYPE_TRAIT(1, remove_cv, RemoveCV, 0)
+TYPE_TRAIT(1, remove_cvref, RemoveCVRef, 0)
+TYPE_TRAIT(1, remove_extent, RemoveExtent, 0)
+TYPE_TRAIT(1, remove_pointer, RemovePointer, 0)
+TYPE_TRAIT(1, remove_reference_t, RemoveReference, 0)
+TYPE_TRAIT(1, remove_restrict, RemoveRestrict, 0)
+TYPE_TRAIT(1, remove_volatile, RemoveVolatile, 0)
+TYPE_TRAIT(1, underlying_type, UnderlyingType, 0)
+
+
+
+
+ANNOTATION(scope)        // annotation for a Gray-Leaf scope spec, (e.g. "::first::second::")
+ANNOTATION(typename)     // annotation for a typedef name, a (possibly qualified) typename, 
+                         // (e.g. "test::MyClass"£©, or template-id that names a type.
+ANNOTATION(template_id)  // annotation for a Gray-Leaftemplate-id that names a function template 
+                         // specialization (not a type), or a type-constraint (which might not have
+                         // explicit template arguments), ( e.g. "Test", "Test<int>".)
+ANNOTATION(non_type)     // annotation for a single non-type declaration
+ANNOTATION(non_type_undeclared) // annotation for an undeclared identifier that was assumed to be an ADL-only function name
+ANNOTATION(non_type_dependent)  // annotation for an assumed non-type member of a dependent base class
+ANNOTATION(overload_set) // annotation for an unresolved overload set
+ANNOTATION(primary_expr) // annotation for a primary expression, used when tentatively parsing a lambda init-capture
+ANNOTATION(decltype)     // annotation for a decltype expression, (e.g., "decltype(test.test())")
+ANNOTATION(pack_indexing_type) // annotation for an indexed pack of type, (e.g., "T...[expr]")
+
+// Annotations for module import.
+ANNOTATION(module_import)
+ANNOTATION(module_begin)
+ANNOTATION(module_end)
+
+// Annotation for a package name token that has been looked up and transformed into the name of a package unit.
+ANNOTATION(package_unit)
+
+#undef ANNOTATION
+#undef TYPE_TRAIT
+#undef KEYWORD
+#undef PUNCTUATOR
+#undef TOKEN
