@@ -16,16 +16,20 @@
 *																						*
 *	You should have received a copy of the GNU General Public License					*
 *	along with The Gray-Leaf Project. If not, see <http://www.gnu.org/licenses/>.		*
-*																						*
+* ====------------------------------------------------------------------------------====*
+*	SPDX-License-Identifier: GPL-3.0-only												*
+* 	NOTICE: It's part of Gray-Leaf-Project.												*
 * ====-------------------------TokenTypes.h-----------------Language:C++------------====*
 * /// file:																				*
-*	  Defines the TokenType enum and support functions.									*
+*	  Defines the TokenType and the type traits' enum and support functions.			*
 * 																						*
 *****************************************************************************************/
 #ifndef _TOKEN_TYPES_H_
 #define _TOKEN_TYPES_H_
 
 #include<cstdint>
+#include<cassert>
+#include<cstring>
 
 namespace gl
 {
@@ -42,6 +46,13 @@ namespace gl
 					#define TOKEN(X) X,
 					#include"TokenTypes.def"
 					ENUM_CLASS_TOKEN_END
+				};
+
+				enum class TypeTrait : TokenIndex
+				{
+					#define TYPE_TRAIT(N, S, NAME, VER) NAME,
+					#include "..\..\..\include\Lexer\Token\TokenTypes.def"
+					ENUM_CLASS_TOKEN_TYPE_TRAIT_END
 				};
 
 				// Determines the name of a token.
@@ -66,8 +77,17 @@ namespace gl
 
 				// Return true if this is any of annotation types.
 				bool isAnnotation(TokenType Type);
-			}
-		}
-	}
-}
+
+				// Return the internal name of type trait.
+				const char* getTraitName(TypeTrait TT);
+
+				// Return the spelling of the type trait.
+				const char* getTraitSpelling(TypeTrait TT);
+
+				// Return the number of elements of the type trait.
+				const uint8_t getTypeTraitElements(TypeTrait TT);
+			}// ebd namespace token
+		}// end namesspace lexer
+	}// end namespace compiler
+}// end namespace gl
 #endif
