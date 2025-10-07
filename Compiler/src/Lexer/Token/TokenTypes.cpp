@@ -16,10 +16,12 @@
 *																						*
 *	You should have received a copy of the GNU General Public License					*
 *	along with The Gray-Leaf Project. If not, see <http://www.gnu.org/licenses/>.		*
-*																						*
+* ====------------------------------------------------------------------------------====*	
+*	SPDX-License-Identifier: GPL-3.0-only												*
+* 	NOTICE: It's part of Gray-Leaf-Project.												*									*
 * ====-------------------------TokenTypes.cpp---------------Language:C++------------====*
 * /// file:																				*
-*	  Defines the support functions.													*
+*	  Defines the TokenType and TypeTrait's support functions.							*
 * 																						*
 *****************************************************************************************/
 #include"..\..\..\include\Lexer\Token\TokenTypes.h"
@@ -31,6 +33,21 @@ static constexpr const char* const TokenNames[] = {
 	#define KEYWORD(X,VER) #X,
 	#include"..\..\..\include\Lexer\Token\TokenTypes.def"
 	nullptr
+};
+
+static constexpr const char* const TypeTraitNames[] = {
+	#define TYPE_TRAIT(N, S, NAME, VER) #NAME,
+	#include "..\..\..\include\Lexer\Token\TokenTypes.def"
+};
+
+static constexpr const char* const TypeTraitSpellings[] = {
+	#define TYPE_TRAIT(N, S, NAME, VER) #S,
+	#include "..\..\..\include\Lexer\Token\TokenTypes.def"
+};
+
+static constexpr const uint8_t TypeTraitElements[] = {
+	#define TYPE_TRAIT(N, S, NAME, VER) N,
+	#include "..\..\..\include\Lexer\Token\TokenTypes.def"
 };
 
 const char* gl::compiler::lexer::token::getTokenName(TokenType Type)
@@ -58,6 +75,7 @@ const char* gl::compiler::lexer::token::getKeywordSpelling(TokenType Type)
 	switch (Type)
 	{
 		#define KEYWORD(X,VER) case TokenType::kw_ ## X: return #X;
+		#define TYPE_TRAIT(N, S, NAME, VER) case TokenType::kw_type_trait_ ## S: return #S;
 		#include"..\..\..\include\Lexer\Token\TokenTypes.def"
 	default:
 		break;
@@ -75,4 +93,27 @@ bool gl::compiler::lexer::token::isAnnotation(TokenType Type)
 		break;
 	}
 	return false;
+}
+
+const char* gl::compiler::lexer::token::getTraitName(TypeTrait TT)
+{
+	assert(TT < TypeTrait::ENUM_CLASS_TOKEN_TYPE_TRAIT_END && "Invalid value.");
+	return TypeTraitNames[static_cast<TokenIndex>(TT)];
+}
+
+const char* gl::compiler::lexer::token::getTraitSpelling(TypeTrait TT)
+{
+	assert(TT < TypeTrait::ENUM_CLASS_TOKEN_TYPE_TRAIT_END && "Invalid value.");
+	if (TT == TypeTrait::IsDeducible)
+	{
+		assert(std::strlen(TypeTraitSpellings[static_cast<TokenIndex>(TT)]) == 0);
+		return "__is_deducible";
+	}
+	return TypeTraitSpellings[static_cast<TokenIndex>(TT)];
+}
+
+const uint8_t gl::compiler::lexer::token::getTypeTraitElements(TypeTrait TT)
+{
+	assert(TT < TypeTrait::ENUM_CLASS_TOKEN_TYPE_TRAIT_END && "Invalid value.");
+	return TypeTraitElements[static_cast<TokenIndex>(TT)];
 }
