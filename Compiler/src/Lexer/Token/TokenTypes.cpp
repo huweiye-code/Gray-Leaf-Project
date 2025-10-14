@@ -106,7 +106,7 @@ const char* gl::compiler::lexer::token::getTraitSpelling(TypeTrait TT)
 	assert(TT < TypeTrait::ENUM_CLASS_TOKEN_TYPE_TRAIT_END && "Invalid value.");
 	if (TT == TypeTrait::IsDeducible)
 	{
-		assert(std::strlen(TypeTraitSpellings[static_cast<TokenIndex>(TT)]) == 0);
+		assert(TypeTraitSpellings[static_cast<TokenIndex>(TT)] == '\0');
 		return "__is_deducible";
 	}
 	return TypeTraitSpellings[static_cast<TokenIndex>(TT)];

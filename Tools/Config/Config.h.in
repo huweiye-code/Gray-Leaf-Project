@@ -1,1 +1,8 @@
+#ifndef _CONFIG_H_
+#define _CONFIG_H_
+
 #cmakedefine BUILD_STATIC
+
+#cmakedefine PROJECT_NAME @PROJECT_NAME@
+
+#endif

@@ -2,7 +2,7 @@
 
 # Engilsh | [Chinese](/README-Chinese.md)
 
-* ## __Description__: This is a project to create a new program language with compiler, linker and debuger.
+* ## __Description__: This is a project to create a new program language with compiler, linker and debugger.
 * ## __Core purpose__: In order to study compiler principles and improve my programming skills, I refer to major mainstream C/C++ compilers(like clang, LLVM, gcc) to create a compiler for my own language.
 * ## __TODO__: *☆ In these three month, I will finish the [grammar](/Grammar/first.md). And finish the basic lexical analysis.*
 

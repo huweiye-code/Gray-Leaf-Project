@@ -1,6 +1,6 @@
-# add_gray_leaf_library(name type sources [include_dir] [link_lib])
+# add_gray_leaf_library(name type sources version [include_dir] [link_lib])
 function(add_gray_leaf_library name)
-    cmake_parse_arguments(ARG "STATIC;SHARED" "" "SOURCES;INCLUDE_DIR;LINK_LIB" ${ARGN})
+    cmake_parse_arguments(ARG "STATIC;SHARED" "VERSION" "SOURCES;INCLUDE_DIR;LINK_LIB" ${ARGN})
     
     file(RELATIVE_PATH lib_path
         ${GRAY_LEAF_COMPILER_DIR}/src/
@@ -36,5 +36,5 @@ function(add_gray_leaf_library name)
         target_include_directories(${name} PRIVATE ${ARG_INCLUDE_DIR})
     endif()
     
-    set_target_properties(${name} PROPERTIES LINKER_LANGUAGE CXX RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../../lib)
+    set_target_properties(${name} PROPERTIES LINKER_LANGUAGE CXX RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../../lib VERSION ${ARG_VERSION})
 endfunction()

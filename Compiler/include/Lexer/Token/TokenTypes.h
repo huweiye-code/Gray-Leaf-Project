@@ -29,7 +29,6 @@
 
 #include<cstdint>
 #include<cassert>
-#include<cstring>
 
 namespace gl
 {
@@ -86,7 +85,7 @@ namespace gl
 
 				// Return the number of elements of the type trait.
 				const uint8_t getTypeTraitElements(TypeTrait TT);
-			}// ebd namespace token
+			}// end namespace token
 		}// end namesspace lexer
 	}// end namespace compiler
 }// end namespace gl

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project("Gray_Leaf" VERSION 1.0.0 LANGUAGES CXX)
+project("GRAY_LEAF" VERSION 1.0.0 LANGUAGES CXX)
 
 set(CXX_STANDARD 20)
 set(CXX_STANDARD_REQUIRED ON)
