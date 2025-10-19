@@ -4,7 +4,8 @@
 *.dll
 *.exe
 *.json
-Tools/Config/*.h
+Tools/Config/* 
+!*.in
 
 [Bb]uild/
 [Oo]ut/
