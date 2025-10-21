@@ -13,9 +13,11 @@ option(BUILD_STATIC "Choose build static or shared" OFF)
 
 set(GRAY_LEAF_PROJECT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set(GRAY_LEAF_COMPILER_DIR ${GRAY_LEAF_PROJECT_DIR}/Compiler)
+set(GRAY_LEAF_SUPPORT_DIR ${GRAY_LEAF_PROJECT_DIR}/Support)
 
-list(APPEND CMAKE_MODULE_PATH "${GRAY_LEAF_COMPILER_DIR}/cmake")
-include(add_gray_leaf)
+list(APPEND CMAKE_MODULE_PATH "${GRAY_LEAF_COMPILER_DIR}/cmake" "${GRAY_LEAF_SUPPORT_DIR}/cmake")
+include(add_gray_leaf_compiler)
+include(add_gray_leaf_support)
 
 configure_file(
     ${GRAY_LEAF_PROJECT_DIR}/Tools/Config/Config.h.in

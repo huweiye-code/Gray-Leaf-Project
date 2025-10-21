@@ -65,6 +65,9 @@ namespace gl {
 				const char *newLinePtr;
 			private:
 				void initLexer(const char* bufStart, const char* bufPtr, const char* bufEnd);
+			public:
+				Lexer(const Lexer&) = delete;
+				Lexer& operator=(const Lexer&) = delete;
 			};
 		}
 	}

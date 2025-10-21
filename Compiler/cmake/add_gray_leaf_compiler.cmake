@@ -1,5 +1,7 @@
-# add_gray_leaf_library(name type sources version [include_dir] [link_lib])
-function(add_gray_leaf_library name)
+include(set_windows_version_compiler)
+
+# add_gray_leaf_compiler_library(name type sources version [include_dir] [link_lib])
+function(add_gray_leaf_compiler_library name)
     cmake_parse_arguments(ARG "STATIC;SHARED" "VERSION" "SOURCES;INCLUDE_DIR;LINK_LIB" ${ARGN})
     
     file(RELATIVE_PATH lib_path
@@ -37,4 +39,14 @@ function(add_gray_leaf_library name)
     endif()
     
     set_target_properties(${name} PROPERTIES LINKER_LANGUAGE CXX RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../../lib VERSION ${ARG_VERSION})
+
+    if(MSVC AND TYPE STREQUAL "SHARED")
+        string(REPLACE "." ";" VERSION_SPLIT "${ARG_VERSION}")
+
+        list(GET VERSION_SPLIT 0 MAJOR)
+        list(GET VERSION_SPLIT 1 MINOR)
+        list(GET VERSION_SPLIT 2 PATCH)
+
+        SET_WINDOWS_DLL_VERSION(${name} ${ARG_VERSION} ${MAJOR} ${MINOR} ${PATCH})
+    endif()
 endfunction()
